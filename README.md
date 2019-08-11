@@ -4,3 +4,6 @@ origem: https://forum.techtudo.com.br/perguntas/272414/whatsapp-como-falar-com-a
 Inspiração: https://zapdireto.com/<br>
 Utilizando: https://purecss.io/<br>
 https://fontawesome.com/icons
+
+# Obs.:
+Codigo do pais fixo para Brasil (55)
