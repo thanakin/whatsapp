@@ -35,7 +35,21 @@
             }
     
         </style>
-        <script src="./enviar2.js"></script>
+        <script>
+            function enviar2(){
+                var url = 'https://api.whatsapp.com/send?';
+                var cod = 'phone=55';              
+                var phone = document.getElementById('phone').value;
+                console.log(url + cod + phone);
+                window.location = url + cod + phone;
+            }
+            
+            $(document).ready(function(){
+                $("#formDados").submit(function(){
+                    return false; 
+                    });
+                });
+        </script>
     </head>
     <body>
         <div class="pure-g">
@@ -62,8 +76,3 @@
         </div>
     </body>
 </html>
-<!--
-https://api.whatsapp.com/send?phone=seunumerodetelefone
-https://api.whatsapp.com/send?phone=seunumerodetelefone&amp;text=sua%20mensagem
-http://jsfiddle.net/zuul/1hd0uvtr/
--->
