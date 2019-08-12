@@ -37,20 +37,18 @@
         </style>
         <script>
             function enviar2(){
+                //document.querySelector('#error').style.display = 'none';
                 var url = 'https://api.whatsapp.com/send?';
                 var cod = 'phone=55';              
                 var phone = document.getElementById('phone').value;
                 //console.log(url + cod + phone);
                 if(phone < 1191110000) {
                     console.log('numero incorreto');
-                    document.querySelector('#error').style.display = 'block';
-                    document.querySelector('#error').value = 'Numero incorreto';
+                    //document.querySelector('#error').style.display = 'block';
+                    //document.querySelector('#error').value = 'Numero incorreto';
                 } else {
-                    //document.querySelector('#error').value = 'Enviando';
-                    document.querySelector('#error').style.display = 'none';
-                    sleep(900);
                     console.log('numero correto');
-                    //window.location = url + cod + phone;
+                    window.location = url + cod + phone;
                 }
             }
             
@@ -59,15 +57,6 @@
                     return false; 
                     });
                 });
-
-            function sleep(milliseconds) {
-            var start = new Date().getTime();
-            for (var i = 0; i < 1e7; i++) {
-                if ((new Date().getTime() - start) > milliseconds){
-                break;
-                }
-            }
-            }
         </script>
     </head>
     <body>
@@ -82,12 +71,7 @@
                 <!--<form class="pure-form pure-form-stacked" method="get" action="https://api.whatsapp.com/send?phone=">-->
                     <fieldset>
                         <legend>Informe o telefone a seguir:</legend>
-                        <div class="pure-group">
-                            <input class="pure-input-2-4 pure-input" id="phone" type="number" name="phone" placeholder="98 76543 2100" autofocus required>
-                            <input class="pure-input-2-4 pure-input" style="display: none" id="error" disabled value="">
-                        </div>
-                        <!--<span class="pure-form-message">Informe ddd + numero, sem espaços ou parenteses</span>
-                        <input class="pure-input-1-2 pure-input-rounded" id="msg" type="text" name="text" placeholder="msg" onblur="enviar2()">-->
+                        <input class="pure-input-2-4 pure-input-rounded" id="phone" type="number" name="phone" placeholder="98 76543 2100" autofocus required>
                         <fieldset class="pure-group">
                             <button type="reset" class="button-warning pure-button"><i class="fas fa-eraser"></i> Limpar </button>
                             <button type="submit" class="button-success pure-button" onclick="enviar2()">Enviar <i class="fab fa-whatsapp"></i></button>
